@@ -2,9 +2,9 @@ SQL Запросы
 ========================
 ## Синтаксис и его стандарты
 
-1. стоит изучить руководство по стилю SQL [Руководство по стилю SQL · SQL style guide by Simon Holywell](https://www.sqlstyle.guide/ru/)
+1. стоит изучить руководство по стилю SQL - [SQL style guide by Simon Holywell](https://www.sqlstyle.guide/ru/)
 2. можете отформатировать ваш запрос с помощью, например, https://codebeautify.org/sqlformatter
-3. [Format SQL Statements Online - sqlformat.org](https://sqlformat.org/)
+3. или [Format SQL Statements Online - sqlformat.org](https://sqlformat.org/)
 
 ## Типы данных в SQLite
 
