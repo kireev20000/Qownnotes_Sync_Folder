@@ -153,9 +153,9 @@ def outer(func):
 Задача: Написать параметризированный декоратор которые делает несколько попыток в случае возникнования ошибки по время выполнения. 
 
 ```
-def outer(*dargs, **dkwargs):
-    def inner(func):
-        def wrapper(*args, **kwargs):
+def outer(*dargs, **dkwargs): - параметры декоратора
+    def inner(func): - декорированная функция
+        def wrapper(*args, **kwargs): - параметры функции
             attempts = dkwargs.get("attempts")
             while attempts > 0:
                 try:
