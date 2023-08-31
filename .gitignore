@@ -5,6 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
+Git_auto_update.bat
 
 # Distribution / packaging
 .Python
