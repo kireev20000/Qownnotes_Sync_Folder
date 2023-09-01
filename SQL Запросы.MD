@@ -936,24 +936,32 @@ ORDER BY price DESC;
 ```
 ---
 
-### 
-
+Как из таблицы выбрать все записи c четными ID?
 ```
-
-```
----
-
-### 
-
-```
-
+SELECT * 
+FROM table 
+WHERE id % 2 = 0
 ```
 ---
-
-### 
-
+Напишите SQL-запрос, с применением UNION ALL (не UNION), использующий WHERE для устранения дубликатов.
 ```
+SELECT * 
+FROM mytable 
+WHERE a=X 
 
+UNION ALL 
+
+SELECT * 
+FROM mytable 
+WHERE b=Y AND a!=X
+```
+---
+Дублирование записей с несколькими полями:
+```
+SELECT name, email, COUNT(*)
+ FROM users
+ GROUP BY name, email
+ HAVING COUNT(*) > 1
 ```
     
 Для подсчета количества записей в таблице вы можете использовать следующие команды:
