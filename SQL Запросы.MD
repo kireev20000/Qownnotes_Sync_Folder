@@ -6,6 +6,9 @@ SQL Запросы
 2. можете отформатировать ваш запрос с помощью, например, https://codebeautify.org/sqlformatter
 3. [Format SQL Statements Online - sqlformat.org](https://sqlformat.org/)
 
+Ниже решены задачи из этого курса - [Интерактивный тренажер по SQL — Stepik](https://stepik.org/course/63054/syllabus)
+
+---
 ## Типы данных в SQLite
 
 Не во всех базах данных поддерживается полный набор типов данных. Например, SQLite поддерживает только пять из них: 
@@ -587,6 +590,42 @@ WHERE DATEDIFF(date_last, date_first) IN (SELECT MIN(DATEDIFF(date_last, date_fi
 ```
 Вывести информацию о командировках, начало и конец которых относятся к одному месяцу (год может быть любой). В результат включить столбцы name, city, date_first, date_last. Строки отсортировать сначала  в алфавитном порядке по названию города, а затем по фамилии сотрудника .
 ```
+SELECT name, city, date_first, date_last
+FROM trip
+WHERE MONTH(date_first) = MONTH(date_last)
+ORDER BY city, name
+```
+Вывести название месяца и количество командировок для каждого месяца. Считаем, что командировка относится к некоторому месяцу, если она началась в этом месяце. Информацию вывести сначала в отсортированном по убыванию количества, а потом в алфавитном порядке по названию месяца виде. Название столбцов – Месяц и Количество.
+```
+SELECT MONTHNAME(date_first) AS Месяц, COUNT(city) AS Количество 
+FROM trip
+GROUP BY Месяц
+ORDER BY Количество DESC, Месяц;
+```
+Вывести сумму суточных (произведение количества дней командировки и размера суточных) для командировок, первый день которых пришелся на февраль или март 2020 года. Значение суточных для каждой командировки занесено в столбец per_diem. Вывести фамилию и инициалы сотрудника, город, первый день командировки и сумму суточных. Последний столбец назвать Сумма. Информацию отсортировать сначала  в алфавитном порядке по фамилиям сотрудников, а затем по убыванию суммы суточных.
+```
+SELECT name, city, date_first , (DATEDIFF(date_last, date_first)+1) * per_diem AS Сумма
+FROM trip
+WHERE MONTH(date_first) IN (2,3) AND YEAR(date_first) = 2020
+ORDER BY name, Сумма DESC;
+```
+Вывести фамилию с инициалами и общую сумму суточных, полученных за все командировки для тех сотрудников, которые были в командировках больше чем 3 раза, в отсортированном по убыванию сумм суточных виде. Последний столбец назвать Сумма.
+```
+SELECT name, SUM((DATEDIFF(date_last,date_first)+1) * per_diem) AS Сумма
+FROM trip
+WHERE name IN (SELECT name
+               FROM trip
+               GROUP BY name
+               HAVING COUNT(name) > 3)
+GROUP BY name
+ORDER BY Сумма DESC
+```
+
+
+```
+
+```
+
 
 ```
 
@@ -597,11 +636,192 @@ WHERE DATEDIFF(date_last, date_first) IN (SELECT MIN(DATEDIFF(date_last, date_fi
 ```
 
 ```
+
 ```
 
 ```
+
 ```
 
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+---
+
+## JOIN Объединение таблиц
+РСУБД используют соединения для того, чтобы сопоставить строки одной таблицы строкам другой таблицы. JOIN - оператор языка SQL, который является реализацией операции соединения реляционной алгебры. Входит в раздел FROM операторов SELECT, UPDATE или DELETE.
+
+```
+SELECT
+FROM таблица_1 
+INNER JOIN  таблица_2 ON условие
+
+или 
+
+FROM <таблица1>
+INNER JOIN | LEFT [OUTER] JOIN | RIGHT [OUTER] JOIN <таблица2>
+ON <таблица_1>.<столбец_1>=<таблица_2><столбец_2>
+```
+![qownnotes-media-qeKFAi](media/qownnotes-media-qeKFAi.png)
+
+---
+
+### INNER JOIN Внутреннее пересечение
+
+Результат запроса формируется так:
+
+- каждая строка одной таблицы сопоставляется с каждой строкой второй таблицы;
+- для полученной «соединённой» строки проверяется условие соединения;
+- если условие истинно, в таблицу результата добавляется соответствующая «соединённая» строка;
+
+Поскольку поля author_id в таблицах book и author называются одинаково, необходимо в запросах указывать полную ссылку на них (book.author_id и author.author_id).
+```
+SELECT title, name_author
+FROM author 
+INNER JOIN book ON author.author_id = book.author_id;
+```
+Вывести название, жанр и цену тех книг, количество которых больше 8, в отсортированном по убыванию цены виде.
+```
+SELECT title, name_genre, price
+FROM book
+INNER JOIN genre ON book.genre_id = genre.genre_id
+WHERE amount > 8
+ORDER BY price DESC;
+```
+
+```
+
+```
+
+---
+
+### LEFT OUTER JOIN - Левое внешнее соединение
+При обработке запроса LEFT OUTER JOIN объединяемые таблицы условно называют «левая» и «правая». «Левая» — та, которая вызвана в блоке FROM, «правая» — та, что указана после ключевого слова JOIN. «Правых» таблиц может быть и несколько.
+
+В этом запросе OUTER — не обязательное слово. Можно использовать сокращённую запись: LEFT JOIN.
+При выполнении запросов с LEFT JOIN возвращаются все строки левой таблицы. Данными из правой таблицы дополняются только те строки левой таблицы, для которых выполняются условия соединения, описанные после оператора ON. Для недостающих данных вместо строк правой таблицы вставляются NULL-значения.
+
+```
+SELECT movies.name,
+       slogans.name
+FROM movies
+LEFT JOIN slogans ON movies.slogan_id = slogans.id; 
+```
+---
+
+### RIGHT OUTER JOIN
+RIGHT JOIN  – это такое же объединение, как и LEFT JOIN, но выводятся все записи из правой таблицы, а к ним добавляются только те данные из левой таблицы, в которых есть ключ объединения.
+
+```
+SELECT ice_cream.name, 
+       categories.slug, 
+       wrappers.name, 
+       MIN(ice_cream.price),
+       AVG(ice_cream.price)
+FROM ice_cream
+LEFT JOIN wrappers ON ice_cream.wrapper_id = wrappers.id
+JOIN categories ON ice_cream.category_id = categories.id
+GROUP BY categories.id
+```
+---
+
+### FULL OUTER JOIN
+При запросе FULL (OUTER) JOIN выводятся все записи из объединяемых таблиц. Те записи, у которых запрошенные значения совпадают — выводятся парами, у остальных недостающее значение заменяется на NULL (Python выведет None).
+Другими словами, FULL JOIN == LEFT JOIN + RIGHT JOIN.
+
+```
+SELECT movies.name,
+       slogans.name
+FROM movies
+FULL JOIN slogans ON movies.slogan_id = slogans.id; 
 ```
 ---
 
@@ -612,17 +832,15 @@ WHERE DATEDIFF(date_last, date_first) IN (SELECT MIN(DATEDIFF(date_last, date_fi
 ```
 ---
 
-### 
+### CROSS JOIN
+
+Объединение таблиц через CROSS JOIN возвращает декартово произведение таблиц — каждая запись левой таблицы объединится с каждой записью правой. Параметр ON при запросах CROSS JOIN не применяется.
 
 ```
-
-```
----
-
-### 
-
-```
-
+SELECT movies.name,
+       slogans.name
+FROM movies
+CROSS JOIN slogans; 
 ```
 ---
 
@@ -633,39 +851,40 @@ WHERE DATEDIFF(date_last, date_first) IN (SELECT MIN(DATEDIFF(date_last, date_fi
 ```
 ---
 
-### 
+## UNION
+
+Предложение UNION приводит к появлению в результирующем наборе всех строк каждого из запросов. При этом, если определен параметр ALL, то сохраняются все дубликаты выходных строк, в противном случае в результирующем наборе присутствуют только уникальные строки. Заметим, что можно связывать вместе любое число запросов. Кроме того, с помощью скобок можно задавать порядок объединения.
+
+Операция объединения может быть выполнена только при выполнении следующих условий:
+
+- количество выходных столбцов каждого из запросов должно быть одинаковым;
+
+- выходные столбцы каждого из запросов должны быть совместимы между собой (в порядке их следования) по типам данных;
+
+- в результирующем наборе используются имена столбцов, заданные в первом запросе;
+
+- предложение ORDER BY применяется к результату соединения, поэтому оно может быть указано только в конце всего составного запроса.
 
 ```
+SELECT model, price
+FROM PC
+UNION
+SELECT model, price
+FROM Laptop
+ORDER BY price DESC;
 
-```
----
+или 
 
-### 
-
-```
-
-```
----
-
-### 
-
-```
-
-```
----
-
-### 
-
+SELECT Product.type, PC.model, price
+FROM PC INNER JOIN   
+     Product ON PC.model = Product.model
+UNION
+SELECT Product.type, Laptop.model, price 
+FROM Laptop INNER JOIN   
+     Product ON Laptop.model = Product.model
+ORDER BY price DESC;
 ```
 
-```
----
-
-### 
-
-```
-
-```
 ---
 
 ### 
@@ -815,3 +1034,4 @@ WHERE DATEDIFF(date_last, date_first) IN (SELECT MIN(DATEDIFF(date_last, date_fi
 ```
 
 ```
+[GitHub - Коллекция готовых SQL запросов для PostgreSQL по часто возникающим задачам (получение и модификация данных, ускорение запросов, обслуживание БД)](https://github.com/rin-nas/postgresql-patterns-library)
