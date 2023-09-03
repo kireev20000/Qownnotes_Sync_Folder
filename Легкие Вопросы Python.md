@@ -6,7 +6,7 @@
 item[START:STOP:STEP] - берёт срез от номера START, до STOP (не включая его), с шагом STEP. По умолчанию START = 0, STOP = длине объекта, STEP = 1
 ```
 def solution(string):
-    return string[::-1]
+    return string[::-1] #разворот строки
 ```
 ---
 
