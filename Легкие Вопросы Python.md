@@ -1,7 +1,9 @@
 Легкие Вопросы Python
 ========================
 ---
-### Как развернуть строку.
+### Cрезы. Как развернуть строку.
+
+item[START:STOP:STEP] - берёт срез от номера START, до STOP (не включая его), с шагом STEP. По умолчанию START = 0, STOP = длине объекта, STEP = 1
 ```
 def solution(string):
     return string[::-1]
@@ -47,6 +49,7 @@ Alexandr Tikhonov, [29.08.2023 15:53]
 Вопрос 28:  Какие есть методы для работы со строками?<br><br>A : len, split, find, get<br><br>B : size, split, join, replace<br><br>C : get, join, strip, find<br><br>D : replace, join, strip, split
 Вопрос 29:  Какое ключевое слово используется для получения доступа к глобальной переменной внутри функции? <br><br>A : Изнутри функции нельзя получить доступ к глобальной переменной<br><br>B : nonlocal<br><br>C : global<br><br>D : from
 Вопрос 30:  Какой синтаксис у однострочного комментария в Python?<br><br>A : /* comment */<br><br>B : #  comment<br><br>C : // comment<br><br>D : /// comment
+
 ---
 
 ###  Замените одну букву на другую.
