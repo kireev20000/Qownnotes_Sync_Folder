@@ -76,6 +76,8 @@ PyPy — это интерпретатор Python, написанный на Pyt
     
 Подробнее -  [Типы данных в Python](https://proglib.io/p/samouchitel-po-python-dlya-nachinayushchih-chast-3-tipy-dannyh-preobrazovanie-i-bazovye-operacii-2022-10-14)
 
+[Mastering mutable and immutable objects in Python | Data Science Dojo](https://datasciencedojo.com/blog/mutable-and-immutable-objects-in-python/#:~:text=In%20contrast%20to%20mutable%20objects,strings%2C%20tuples%2C%20and%20numbers)
+
 Чтобы узнать тип данных, нужно воспользоваться встроенной функцией type():
 
 ---
