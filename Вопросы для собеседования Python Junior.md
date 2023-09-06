@@ -221,29 +221,7 @@ id(a) # 2044369999872
 - Map 
 
 [к оглавлению ⬆️](https://github.com/markdrrr/interview_questions_python_junior/blob/main/README.md#вопросы-для-собеседования-python-junior)
-### 9. Что такое Git
-Распределённая система управления версиями. Разработан Линусом Торвальдсом, для удобной разработки ядра Linux.
 
-[к оглавлению ⬆️](https://github.com/markdrrr/interview_questions_python_junior/blob/main/README.md#вопросы-для-собеседования-python-junior)
-### 10. Как создать гит репозиторий локально
-```
-git init
-```
-
-[к оглавлению ⬆️](https://github.com/markdrrr/interview_questions_python_junior/blob/main/README.md#вопросы-для-собеседования-python-junior)
-
-### 11. Что такое git push
-Отправка всех неотправленных локальных коммитов на удалённый сервер репозитория.
-
-[к оглавлению ⬆️](https://github.com/markdrrr/interview_questions_python_junior/blob/main/README.md#вопросы-для-собеседования-python-junior)
-### 12. Что делает git commit
-Фиксирует изменения локальных файлов в таймлайне репозитория. Другими словами делает "моментальный снимок" репозитория в данный момент времени, который и является версией.
-
-[к оглавлению ⬆️](https://github.com/markdrrr/interview_questions_python_junior/blob/main/README.md#вопросы-для-собеседования-python-junior)
-### 13. Git merge и rebase
-`git merge` - принимает содержимое ветки источника и объединяет их с целевой веткой. В этом процессе изменяется только целевая ветка. История исходных веток остается неизменной.
-`git rebase` — еще один способ перенести изменения из одной ветки в другую. Rebase сжимает все изменения в один «патч». Затем он интегрирует патч в целевую ветку.
-В отличие от слияния, перемещение перезаписывает историю, потому что она передает завершенную работу из одной ветки в другую. В процессе устраняется нежелательная история.
 
 [к оглавлению ⬆️](https://github.com/markdrrr/interview_questions_python_junior/blob/main/README.md#вопросы-для-собеседования-python-junior)
 ### 14. Что такое виртуальное окружение
