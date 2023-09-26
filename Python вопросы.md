@@ -1538,6 +1538,8 @@ greet('Ivan')
 - [Микросервисы (Microservices)](https://habr.com/ru/post/249183/)
 - [Цикл событий в js](https://www.youtube.com/watch?v=8cV4ZvHXQL4&index=3&t=0s&list=PLmcXv3fDgVcjpZ6QnpXrSNTj7-RxtdFhA)
 - [Разница между nginx и apache с примерами](https://habr.com/ru/post/320710/)
+- [Python: коллекции, часть 1/4: классификация, общие подходы и методы, конвертация / Хабр](https://habr.com/ru/articles/319164/)
+- 
 
 # Источники вопросов
 
