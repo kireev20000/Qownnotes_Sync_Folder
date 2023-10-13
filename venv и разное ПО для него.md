@@ -32,7 +32,6 @@ pip freeze > requirements.txt
 rm -r venv  
 ```
 
-
 # Poetry
 
 [Poetry: from zero to hero / Хабр](https://habr.com/ru/articles/740376/)
