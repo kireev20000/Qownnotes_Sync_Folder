@@ -31,6 +31,7 @@ pip freeze > requirements.txt
 ```bash
 rm -r venv  
 ```
+---
 
 # Poetry
 
