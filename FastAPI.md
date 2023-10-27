@@ -195,15 +195,76 @@ async def add_todo(todo: Todo) -> dict:
         "message": "Todo added successfully."
     }
 ```
+---
+## Jinja2 templates in FastAPI
 
+The Jinja templating engine makes use of curly brackets { } to distinguish its expressions and syntax from regular HTML, text and any other variable in the template file. The {{ }} syntax is called a variable block. The {% %} syntax houses control structures such as if/else, loops, and macros.
+The three common syntax blocks used in the Jinja templating language include the following:
+1) {% … %} – This syntax is used for statements such as control structures.
+2) {{ todo.item }} – This syntax is used to print out the values of the expressions passed to it.
+3) {# This is a great API book! #} – This syntax is used when writing comments and is not displayed on the web page.
+
+Jinja template variables can be of any Python type or object if they can be converted into strings. A model, list, or dictionary type can be passed to the template.
+
+### Filters
+
+Despite the similarity between Python and Jinja’s syntax, modifications such as joining strings, setting the first character of a string to uppercase, and so on cannot be done using Python’s syntax in Jinja. Therefore, to perform such  modifications, we have filters in Jinja. A filter is separated from the variable by a pipe symbol (|) and may entertain optional arguments in parentheses. A filter is defined in this format:
 
 ```py
+    {{ variable | filter_name(*args) }}
 
+If there are no arguments, the definition becomes the following:
+
+    {{ variable | filter_name }}
+    
+The default filter variable is used to replace the output of the passed value if it turns out to be None:
+
+{{ todo.item | default('This is a default todo item') }}
+This is a default todo item
+
+The escape filter. This filter is used to render raw HTML output:
+{{ "<title>Todo Application</title>" | escape }}
+<title>Todo Application</title>
+
+Using if statements. The usage of if statements in Jinja is similar to their usage in Python. if statements are used in the {% %} control blocks. Let’s look at an example:
+
+{% if todo | length < 5 %}
+    You don't have much items on your todo list!
+{% else %}
+    You have a busy day it seems!
+{% endif %}
+
+Loops. We can also iterate through variables in Jinja. This could be a list or a general function, such as the following, for example:
+{% for todo in todos %}
+    <b> {{ todo.item }} </b>
+{% endfor %}
+
+You can access special variables inside a for loop, such as loop.index, which gives
+the index of the current iteration. 
 ```
+[Template Designer Documentation — Jinja Documentation (3.0.x)](https://jinja.palletsprojects.com/en/3.0.x/templates/#builtin-filters) 
 
 
-```py
+---
+### Macros in Jinja
+A macro in Jinja is a function that return an HTML string. The main use case for macros is to avoid the repetition of code and instead use a single function call. For example, an input macro is defined to reduce the continuous definition of input tags in an HTML form:
 
+```html
+    {% macro input(name, value='', type='text', size=20 %}
+      <div class="form">
+      <input type="{{ type }}" name="{{ name }}" value="{{ value|escape }}"               size="{{ size }}">
+      </div>
+    {% endmacro %}
+
+Now, to quickly create an input in your form, the macro is called:
+
+    {{ input('item') }}
+
+This will return the following:
+
+    <div class="form">
+      <input type="text" name="item" value="" size="20">
+    </div>
 ```
 
 
