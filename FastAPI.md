@@ -116,19 +116,84 @@ class Todo(BaseModel):
 
 ## Response Models and Error Handling
 
+### What is a response header?
+A response header consists of the request's status and additional information to guide the delivery of the response body. An example of the information contained in the response header is Content-Type, which tells the client the content type returned. 
+
+### What is a response body?
+The response body, on the other hand, is the data requested from the server by the client. The response body is determined from the Content-Type header variable and the most commonly used one is application/json.
+
+### Status codes
+Status codes are unique short codes issued by a server in response to a client’s request. Response status codes are grouped into five categories, each denoting a different response:
+
+- 1XX: Request has been received.
+- 2XX: The request was successful.
+- 3XX: Request redirected.
+- 4XX: There’s an error from the client.
+- 5XX: There’s an error from the server.Building response models 45
+
+A complete list of HTTP status codes can be found at https://httpstatuses.com/
+
+---
+### Building response models
+
+
 
 ```py
+--- model.py
+class Todo(BaseModel):
+    id: int
+    item: str
+    
+class TodoItem(BaseModel):
+    item: str
 
+class TodoItems(BaseModel):
+    todos: List[TodoItem]
+
+--- app.py
+
+@todo_router.get("/todo", response_model=TodoItems)
+async def retrieve_todo() -> dict:
+    return {
+        "todos": todo_list
+    }
+--- результат
+в ответе отображается только item, без id
+    
 ```
+---
 
+### Error handling
+Errors in FastAPI are handled by raising an exception using FastAPI’s HTTPException class. The HTTPException class takes three arguments:
+
+• status_code: The status code to be returned for this disruption
+• detail: Accompanying message to be sent to the client
+• headers: An optional parameter for responses requiring headers
 
 ```py
+from fastapi import APIRouter, Path, HTTPException, status
 
+@todo_router.get("/todo/{todo_id}")
+async def get_single_todo(todo_id: int = Path(..., title="The ID of the todo to retrieve.")) -> dict:
+    for todo in todo_list:
+        if todo.id == todo_id:
+            return {
+                "todo": todo
+            }
+    raise HTTPException(
+        status_code=status.HTTP_404_NOT_FOUND,
+        detail="Todo with supplied ID doesn't exist",
+    )
 ```
-
+We can declare the HTTP status code to override the default status code for successful operations by adding the status_code argument to the decorator function:
 
 ```py
-
+@todo_router.post("/todo", status_code=201)
+async def add_todo(todo: Todo) -> dict:
+    todo_list.append(todo)
+    return {
+        "message": "Todo added successfully."
+    }
 ```
 
 
