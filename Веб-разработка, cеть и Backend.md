@@ -415,7 +415,11 @@ CI – это своеобразная страховочная сетка, по
 - Непрерывная интеграция (CI): короткоживущие функциональные ветки, команда сливает их с основной веткой разработки по несколько раз в день, процессы сборки и тестирования полностью автоматизированы, результат имеем в пределах 10 минут; развертывание выполняется вручную.
 - Непрерывная доставка (CD): автоматизируется CI + весь процесс релиза ПО. Может состоять из нескольких этапов. Развертывание в продакшен выполняется вручную.
 - Непрерывное развертывание: CI + CD + полностью автоматизированное развертывание в продакшен.
-- 
+---
+
+Authentication is the process of verifying the credentials passed by an entity and authorization simply means giving an entity permission to perform designated actions. When credentials have been verified, the entity is then authorized to carry out various actions.
+
+---
 
 ## Backend
 1. Что такое протокол передачи данных?

@@ -266,27 +266,75 @@ This will return the following:
       <input type="text" name="item" value="" size="20">
     </div>
 ```
-## Structuring FastAPI app
+## Authentication methods in FastAPI
 
-1) In the newly created planner folder, create an entry file, main.py, and three subfolders – database, routes, and models. 
-2) Next, create __init__.py in every folder. 
-3) In the database folder, let’s create a blank file, database.py, which will handle the database abstractions
-4) In both the routes and models folders, we’ll create two files, events.py and users.
-5) 
-py
+FastAPI supports the common authentication methods of basic HTTP authentication, cookies, and bearer
+token authentication. Let’s briefly look at what each method entails: 
 
+1) Basic HTTP authentication: In this authentication method, the user credentials, which is usually a username and password, are sent via an Authorization HTTP header. The request in turn returns a WWW-Authenticate header containing a Basic value and an optional realm parameter, which indicates the resource the authentication request is made to.
+2) Cookies: Cookies are employed when data is to be stored on the client side, such as in web browsers. FastAPI applications can also employ cookies to store user data, which can be retrieved by the server for authentication purposes. 
+3) Bearer token authentication: This method of authentication involves the use of  security tokens called bearer tokens. These tokens are sent alongside the Bearer keyword in an Authorization header request. The most used token is JWT, which is usually a dictionary comprising the user ID and the token’s expiry time
+
+## Dependency injection
+
+Dependency injection is a pattern where an object – in this case, a function – receives an instance variable needed for the further execution of the function.
+
+[Внедрение зависимостей проще простого – на Python / Хабр](https://habr.com/ru/companies/piter/articles/648299/)
+[Understanding Dependencies / Хабр](https://habr.com/ru/articles/349836/)
+[Dependency injection в Python простыми словами / Dependency Injector - YouTube](https://www.youtube.com/watch?v=mJI7MzRCVkQ)
+
+In FastAPI, dependencies are injected by declaring them in the path operation function arguments.
+In FastAPI, a dependency can be defined as either a function or a class. The dependency created gives us access to its underlying values or methods, eliminating the need to create these objects in the functions inheriting them. Dependency injection helps in reducing code repetition in some cases, such as in enforcing authentication and authorization.
+
+```py
+from fastapi import Depends
+
+@router.get("/user/me")
+async get_user_details(user: User = Depends(get_user)):
+    return user
+```
+The route function here is dependent on the get_user function, which serves as its dependency. What this means is that to access the preceding route, the get_user dependency must be satisfied. 
+The Depends class, which is imported from the FastAPI library, is responsible for taking the function passed as the argument and executing it when the endpoint is called, automatically making available to the endpoint, they return value of the function passed to it.
+
+---
+Depends импортируется с fastapi
+from fastapi import Depends
+
+и ее пишут для удобства. Типо чтобы не прописывать аргументы вручную, а указать уже на существующие требования для какой то функции. Типо так
+
+def func1(arg1, arg2):
+    return arg1, arg2
+
+def func2(Depends(func1)):
+return arg1, arg2
+
+Вот во вторую функцию типо мы не прописывали arg1, arg2, но они ожидаются там
+
+[Dependencies - FastAPI](https://fastapi.tiangolo.com/tutorial/dependencies/#__tabbed_1_1)
 ```py
 
 ```
+## What is a middleware?
+A middleware is a function that acts as an intermediary between an operation. In web APIs, a middleware serves as an mediator in a request-response operation.
 
+
+## Configuring CORS
+
+Cross-Origin Resource Sharing (CORS) serves as a rule that prevents unregistered clients access to a resource.
+FastAPI provides a CORS middleware, CORSMiddleware, that allows us to register domains which can access our API. The middleware takes an array of origins which will be permitted to access the resources on the server
 
 ```py
+from fastapi.middleware.cors import CORSMiddleware
 
-```
+origins = ["*"]
 
-
-```py
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 ```
 
 
