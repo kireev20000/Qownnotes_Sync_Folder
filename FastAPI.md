@@ -266,7 +266,14 @@ This will return the following:
       <input type="text" name="item" value="" size="20">
     </div>
 ```
+## Structuring FastAPI app
 
+1) In the newly created planner folder, create an entry file, main.py, and three subfolders – database, routes, and models. 
+2) Next, create __init__.py in every folder. 
+3) In the database folder, let’s create a blank file, database.py, which will handle the database abstractions
+4) In both the routes and models folders, we’ll create two files, events.py and users.
+5) 
+py
 
 ```py
 
