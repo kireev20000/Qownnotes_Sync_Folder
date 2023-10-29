@@ -336,10 +336,33 @@ app.add_middleware(
     allow_headers=["*"],
 )
 ```
+## Testing FastAPI Applications
+154  страница Building Python Web APIs with FastAPI A fast paced guide to building (2022) Adeshina
 
+Unit testing is a testing procedure where individual components of an application are tested. This form of testing enables us to verify the working capability of individual components. For example, unit tests are employed in testing individual routes in an application to ensure the proper responses are returned.
+
+The standard practice is to define the functions that will be tested in an external location. This file is then imported and the functions to be tested are invoked in the test functions.
+
+Fixtures are reusable functions defined to return the data needed in test functions. Fixtures are decorated with the pytest.fixture decorator.
 
 ```py
+import pytest
 
+from models.events import EventUpdate
+
+# Fixture is defined.
+@pytest.fixture
+def event() -> EventUdpate:
+    return EventUpdate(
+        title="FastAPI Book Launch",
+        image="https://packt.com/fastapi.png",
+        description="We will be discussing the contents of the FastAPI book in this event.Ensure to come with your own copy to win gifts!",
+        tags=["python", "fastapi", "book", "launch"],
+        location="Google Meet"
+)
+
+def test_event_name(event: EventUpdate) -> None:
+    assert event.title == "FastAPI Book Launch"
 ```
 
 
