@@ -344,7 +344,6 @@ Unit testing is a testing procedure where individual components of an applicatio
 The standard practice is to define the functions that will be tested in an external location. This file is then imported and the functions to be tested are invoked in the test functions.
 
 Fixtures are reusable functions defined to return the data needed in test functions. Fixtures are decorated with the pytest.fixture decorator.
-
 ```py
 import pytest
 
