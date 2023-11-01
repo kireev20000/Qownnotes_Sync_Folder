@@ -38,4 +38,5 @@ rm -r venv
 
 [Poetry — прекрасная альтернатива pip (шпаргалка) / Хабр](https://habr.com/ru/articles/593529/)
 
-%APPDATA%\Python\Scripts\activate
+
+
