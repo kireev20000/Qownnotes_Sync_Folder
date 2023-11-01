@@ -37,3 +37,5 @@ rm -r venv
 [Poetry: from zero to hero / Хабр](https://habr.com/ru/articles/740376/)
 
 [Poetry — прекрасная альтернатива pip (шпаргалка) / Хабр](https://habr.com/ru/articles/593529/)
+
+%APPDATA%\Python\Scripts\activate
