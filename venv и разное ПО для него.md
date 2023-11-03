@@ -38,5 +38,9 @@ rm -r venv
 
 [Poetry — прекрасная альтернатива pip (шпаргалка) / Хабр](https://habr.com/ru/articles/593529/)
 
+pip install = poetry add 
+poetry remove google-cloud-bigquery
+
+
 
 
