@@ -364,9 +364,7 @@ def test_event_name(event: EventUpdate) -> None:
     assert event.title == "FastAPI Book Launch"
     
 ```
-
-
-
+00
 
 ```py
 

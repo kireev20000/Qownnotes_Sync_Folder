@@ -420,6 +420,12 @@ CI – это своеобразная страховочная сетка, по
 Authentication is the process of verifying the credentials passed by an entity and authorization simply means giving an entity permission to perform designated actions. When credentials have been verified, the entity is then authorized to carry out various actions.
 
 ---
+# Reverse proxy 
+
+<https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/>
+
+
+---
 
 ## Backend
 1. Что такое протокол передачи данных?
