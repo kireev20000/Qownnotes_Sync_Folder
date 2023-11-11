@@ -364,10 +364,11 @@ def test_event_name(event: EventUpdate) -> None:
     assert event.title == "FastAPI Book Launch"
     
 ```
-00
+## Подключение к БД синтаксис:
+
 
 ```py
-
+DATABASE_URL = "postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_SERVER}:{POSTGRES_PORT}/{POSTGRES_DB}"
 ```
 
 
