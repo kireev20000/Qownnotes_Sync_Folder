@@ -90,3 +90,5 @@ uses: appleboy/scp-action@master
 docker compose -f имя_файла_композа up
 
 
+
+
