@@ -268,7 +268,6 @@ This will return the following:
 ```
 ## Authentication methods in FastAPI
 
-
 FastAPI supports the common authentication methods of basic HTTP authentication, cookies, and bearer
 token authentication. Let’s briefly look at what each method entails: 
 
