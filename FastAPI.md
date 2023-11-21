@@ -268,8 +268,7 @@ This will return the following:
 ```
 ## Authentication methods in FastAPI
 
-
-d FastAPI supports the common authentication methods of basic HTTP authentication, cookies, and bearer
+FastAPI supports the common authentication methods of basic HTTP authentication, cookies, and bearer
 token authentication. Let’s briefly look at what each method entails: 
 
 1) Basic HTTP authentication: In this authentication method, the user credentials, which is usually a username and password, are sent via an Authorization HTTP header. The request in turn returns a WWW-Authenticate header containing a Basic value and an optional realm parameter, which indicates the resource the authentication request is made to.
