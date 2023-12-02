@@ -267,6 +267,9 @@ This will return the following:
     </div>
 ```
 ## Authentication methods in FastAPI
+
+0000
+
 FastAPI supports the common authentication methods of basic HTTP authentication, cookies, and bearer
 token authentication. Let’s briefly look at what each method entails: 
 
