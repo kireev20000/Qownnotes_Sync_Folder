@@ -268,8 +268,6 @@ This will return the following:
 ```
 ## Authentication methods in FastAPI
 
-0000231321321321 ллллл
-
 FastAPI supports the common authentication methods of basic HTTP authentication, cookies, and bearer
 token authentication. Let’s briefly look at what each method entails: 
 
@@ -368,7 +366,7 @@ def test_event_name(event: EventUpdate) -> None:
 ```
 ## Подключение к БД синтаксис:
 
-
+0
 
 ```py
 DATABASE_URL = "postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_SERVER}:{POSTGRES_PORT}/{POSTGRES_DB}"
