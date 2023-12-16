@@ -366,6 +366,11 @@ def test_event_name(event: EventUpdate) -> None:
 ```
 ## Подключение к БД синтаксис:
 
+6546574
+
+64646
+4
+645
 
 ```py
 DATABASE_URL = "postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_SERVER}:{POSTGRES_PORT}/{POSTGRES_DB}"
