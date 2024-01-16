@@ -371,7 +371,7 @@ DATABASE_URL = "postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_SERVE
 ```
 
 Обновить резюме на всех сайтах по ПР.
-
+000000000
 
 
 ```py
