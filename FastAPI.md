@@ -369,8 +369,6 @@ def test_event_name(event: EventUpdate) -> None:
 ```py
 DATABASE_URL = "postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_SERVER}:{POSTGRES_PORT}/{POSTGRES_DB}"
 ```
-
-Обновить резюме на всех сайтах по ПР.
 000000000
 
 
