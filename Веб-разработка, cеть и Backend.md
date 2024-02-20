@@ -134,41 +134,25 @@ REST позволяет вам использовать многоуровнев
 
 Все вышеперечисленные ограничения помогают вам создать действительно RESTful API, и вы должны следовать им. Тем не менее, иногда вы можете столкнуться с нарушением одного или двух ограничений. Не беспокойтесь, вы все еще создаете API RESTful, но не «труЪ RESTful».
 
-Архитектура RESTТакой подход получил название API-First, то есть сначала данные, а затем — интерфейсы для их отображения.
+Архитектура REST Такой подход получил название API-First, то есть сначала данные, а затем — интерфейсы для их отображения.
   REST, или REpresentational State Transfer (англ. «передача состояния представления») — это набор принципов, 
   которых следует придерживаться при создании API. Если API сделан по этим принципам, его называют RESTful API (или просто REST API).
-  1. Клиент-сервер. Разделение ответственности между клиентом и сервером
-  Клиент и сервер отвечают за разные вещи. Ответственность клиента — пользовательский интерфейс, 
-  ответственность сервера — данные. Если API возвращает HTML-страницу, его нельзя назвать REST API: 
-  ведь при этом сервер берёт на себя ответственность за интерфейс.
-  2. Отсутствие состояния. Сервер не хранит состояние
-  Каждый запрос должен быть независимым, как будто он сделан в первый раз. 
-  Сервер не должен хранить какой-либо информации о клиенте. Запрос клиента к серверу должен содержать всю информацию, 
-  необходимую для обработки этого запроса: кто запрашивает данные, какие данные запрашиваются.
-  3. Единый интерфейс
-  Интерфейс обращения к серверу одинаков для всех и не зависит от клиента. Запрос к данным может 
-  быть сформирован из браузера, мобильного приложения и с умного чайника по одним и тем же правилам.
+  1. Клиент-сервер. 
+Разделение ответственности между клиентом и сервером. Клиент и сервер отвечают за разные вещи. Ответственность клиента — пользовательский интерфейс,  ответственность сервера — данные. Если API возвращает HTML-страницу, его нельзя назвать REST API: ведь при этом сервер берёт на себя ответственность за интерфейс.
+  2. Отсутствие состояния. 
+Сервер не хранит состояние. Каждый запрос должен быть независимым, как будто он сделан в первый раз. Сервер не должен хранить какой-либо информации о клиенте. Запрос клиента к серверу должен содержать всю информацию, необходимую для обработки этого запроса: кто запрашивает данные, какие данные запрашиваются.
+  3. Единый интерфейс 
+Интерфейс обращения к серверу одинаков для всех и не зависит от клиента. Запрос к данным может быть сформирован из браузера, мобильного приложения и с умного чайника по одним и тем же правилам.
   4. Многоуровневость
-  Первый принцип гласит, что в коммуникации участвуют двое: клиент и сервер. 
-  Но можно строить более сложные системы, не нарушая этого принципа.
-  API сервиса Яндекс.Такси может использовать API Яндекс.Навигатора. 
-  Вы как клиент взаимодействуете только с API Яндекс.Такси, а он в свою очередь является клиентом навигатора. 
-  Здесь есть одно условие — каждый компонент должен видеть только свой уровень, 
-  например, Яндекс.Навигатор не должен видеть все данные, которые вы отправили в Яндекс.Такси.
+Первый принцип гласит, что в коммуникации участвуют двое: клиент и сервер. Но можно строить более сложные системы, не нарушая этого принципа. API сервиса Яндекс.Такси может использовать API Яндекс.Навигатора. 
+Вы как клиент взаимодействуете только с API Яндекс.Такси, а он в свою очередь является клиентом навигатора.   Здесь есть одно условие — каждый компонент должен видеть только свой уровень, например, Яндекс.Навигатор не должен видеть все данные, которые вы отправили в Яндекс.Такси.
   5. Кэшируемость
-  Данные ответа могут быть закэшированы. Это значит, что можно сохранить данные на клиенте, 
-  а при идентичном запросе взять их из памяти клиента — кэша, а не ждать их с сервера. 
-  Нет смысла запрашивать данные повторно, если они никак не изменились.
+Данные ответа могут быть закэшированы. Это значит, что можно сохранить данные на клиенте, а при идентичном запросе взять их из памяти клиента — кэша, а не ждать их с сервера. Нет смысла запрашивать данные повторно, если они никак не изменились.
   6. Код по запросу
-  Этот принцип необязательный. Он гласит, что функциональность клиента может быть расширена кодом, 
-  приходящим с сервера. Сейчас такое можно встретить повсеместно: JavaScript используется для «оживления» страниц 
-  и исполнения каких-то сценариев на стороне клиента. Но принципы формулировались в 2000 году — 
-  тогда исполняемый код с сервера возвращали не так часто. Потому и выделили это в отдельный принцип.
+Этот принцип необязательный. Он гласит, что функциональность клиента может быть расширена кодом,   приходящим с сервера. Сейчас такое можно встретить повсеместно: JavaScript используется для «оживления» страниц и исполнения каких-то сценариев на стороне клиента. Но принципы формулировались в 2000 году —   тогда исполняемый код с сервера возвращали не так часто. Потому и выделили это в отдельный принцип.
   
-  * Ресурсы — существительные
-* Слэш для иерархии
-* Дефисы вместо пробелов
-* HTTP-методыHTTP-метод запроса определяет, что следует сделать:
+### HTTP-методы
+* HTTP-метод запроса определяет, что следует сделать:
   * GET получает ресурсы;
   * POST создаёт ресурс;
   * PUT заменяет существующий ресурс целиком;
@@ -177,15 +161,11 @@ REST позволяет вам использовать многоуровнев
 Реже применяют ещё два метода:
   * HEAD, получить только заголовки ответа. HEAD похож на GET, но у его ответа нет тела;
   * OPTIONS, узнать, какие HTTP-методы поддерживает сервер.
-* Идемпотентность и безопасность методов
-* Безопасность: если метод может изменить ресурс, то он считается небезопасным в терминах архитектуры REST. 
-Такими методами могут быть PUT, PATCH, DELETE или POST.
-Идемпотентность метода заключается в том, что его многократное повторение равно однократному. 
-То есть выполняя один и тот же запрос много-много раз, мы всегда будем получать один и тот же результат.
-Django REST Framework (DRF) предоставляет весь необходимый набор инструментов для создания REST-сервисов на основе Django. 
-По сути, DRF — это набор предустановленных классов, сходных с Generic Views, но они работают с API. 
-Также DRF включает инструменты для сериализации, аутентификации и для решения других штатных задач, 
-возникающих при создании REST API.
+
+### Идемпотентность и безопасность методов
+  * Безопасность: если метод может изменить ресурс, то он считается небезопасным в терминах архитектуры REST. Такими методами могут быть PUT, PATCH, DELETE или POST. Идемпотентность метода заключается в том, что его многократное повторение равно однократному. То есть выполняя один и тот же запрос много-много раз, мы всегда будем получать один и тот же результат. 
+
+Django REST Framework (DRF) предоставляет весь необходимый набор инструментов для создания REST-сервисов на основе Django. По сути, DRF — это набор предустановленных классов, сходных с Generic Views, но они работают с API. Также DRF включает инструменты для сериализации, аутентификации и для решения других штатных задач, возникающих при создании REST API.
 
 ### Что такое SOAP
 
@@ -421,6 +401,38 @@ Authentication is the process of verifying the credentials passed by an entity a
 
 ---
 # Reverse proxy 
+A reverse proxy is a server that sits in front of web servers and forwards client (e.g. web browser) requests to those web servers. Reverse proxies are typically implemented to help increase security, performance, and reliability. In order to better understand how a reverse proxy works and the benefits it can provide, let’s first define what a proxy server is.
+
+What is a proxy server?
+
+A forward proxy, often called a proxy, proxy server, or web proxy, is a server that sits in front of a group of client machines. When those computers make requests to sites and services on the Internet, the proxy server intercepts those requests and then communicates with web servers on behalf of those clients, like a middleman.
+
+For example, let’s name 3 computers involved in a typical forward proxy communication:
+
+    A: This is a user’s home computer
+    B: This is a forward proxy server
+    C: This is a website’s origin server (where the website data is stored)
+
+Forward proxy flow: traffic flows from user's device (A) to forward proxy (B) to Internet to origin server (C)
+
+In a standard Internet communication, computer A would reach out directly to computer C, with the client sending requests to the origin server and the origin server responding to the client. When a forward proxy is in place, A will instead send requests to B, which will then forward the request to C. C will then send a response to B, which will forward the response back to A.
+
+How is a reverse proxy different?
+
+A reverse proxy is a server that sits in front of one or more web servers, intercepting requests from clients. This is different from a forward proxy, where the proxy sits in front of the clients. With a reverse proxy, when clients send requests to the origin server of a website, those requests are intercepted at the network edge by the reverse proxy server. The reverse proxy server will then send requests to and receive responses from the origin server.
+
+The difference between a forward and reverse proxy is subtle but important. A simplified way to sum it up would be to say that a forward proxy sits in front of a client and ensures that no origin server ever communicates directly with that specific client. On the other hand, a reverse proxy sits in front of an origin server and ensures that no client ever communicates directly with that origin server.
+
+Once again, let’s illustrate by naming the computers involved:
+
+    D: Any number of users’ home computers
+    E: This is a reverse proxy server
+    F: One or more origin servers
+
+Reverse proxy flow: traffic flows from user's device (D) to Internet to reverse proxy (E) to origin server (F)
+
+![qownnotes-media-mpdvrg](media/qownnotes-media-mpdvrg.png)
+
 
 <https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/>
 
