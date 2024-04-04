@@ -41,6 +41,6 @@ rm -r venv
 pip install = poetry add 
 poetry remove google-cloud-bigquery
 
-
+C:\Users\Alexsandr\AppData\Roaming\pypoetry\venv\Scripts\poetry.exe
 
 
