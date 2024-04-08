@@ -52,6 +52,9 @@ WOPI on the other hand is the recommended backend storage. WOPI is Web Applicati
 
 может и не надо будет, настройка сервера коде - [Install and Configure Collabora CODE](https://www.linode.com/docs/guides/how-to-install-collabora-code/)
 
+[Настройка сервера Collabora +Nextcloud/Owncloud](https://www.dmosk.ru/miniinstruktions.php?mini=collabora-nextcloud&ysclid=lur06lwih558323992)
+
+
 ---
 ### Видео с конференций о интеграции
 
