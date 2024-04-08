@@ -24,7 +24,7 @@ collabora online
 ---
 ### WOPI Протокол
 
-WOPI REST API Reference - базавое описание протокола WOIP
+WOPI REST API Reference - базовое описание протокола WOIP
  [WOPI REST API Reference | Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/)
 
 In addition to the basics of WOPI as described in WOPI specifications, Collabora Online implements various extensions, in addition to those outlined above primarily associated with CheckFileInfo, to support some features that you may find useful.
