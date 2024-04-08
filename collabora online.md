@@ -6,10 +6,6 @@ collabora online
 ``Здесь разворачивание на своих серверах доступно бесплатно, но готовые пакеты имеют ограничение по количеству активных пользователей — это решается самостоятельной сборкой из исходников, благо проект с открытым исходным кодом. ``
 
 ---
-Демо  [Your Collabora Online Demo](https://demo.eu.collaboraonline.com/owncloud/index.php/login)
-Username: kireev20000@mail.ru, Password: owncloud1234
-
----
 Пример интеграции в Джанго 3.1, очень базово -  [collabora-online-sdk-examples/webapp/python at master · CollaboraOnline/collabora-online-sdk-examples · GitHub](https://github.com/CollaboraOnline/collabora-online-sdk-examples/tree/master/webapp/python)
 
 Аддоны на питоне сомнительной полезности -[GitHub - CollaboraOnline/collabora-online-nuxeo-addon](https://github.com/CollaboraOnline/collabora-online-nuxeo-addon)
