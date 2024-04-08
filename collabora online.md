@@ -58,7 +58,9 @@ WOPI on the other hand is the recommended backend storage. WOPI is Web Applicati
 ---
 ### Видео с конференций о интеграции
 
-видео о интеграции с конференции, примерно тоже самое что в доках, скорее просто обзор возможностей -  [Easy to set up – Anywhere. Integrating Collabora Online Into Your Services 🆒 COOL Days 2021 - YouTube](https://www.youtube.com/watch?v=K8Dw7CWZkVc)
+видео о интеграции с конференции, примерно тоже самое что в доках, скорее просто обзор возможностей 
+
+ [Easy to set up – Anywhere. Integrating Collabora Online Into Your Services 🆒 COOL Days 2021 - YouTube](https://www.youtube.com/watch?v=K8Dw7CWZkVc)
 
 [Setting up your own Collabora Online - COOL Days 2021 - YouTube](https://www.youtube.com/watch?v=m-N_wnV-eJw)
 
