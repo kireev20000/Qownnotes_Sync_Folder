@@ -433,29 +433,7 @@ Reverse proxy flow: traffic flows from user's device (D) to Internet to reverse 
 
 ![qownnotes-media-mpdvrg](media/qownnotes-media-mpdvrg.png)
 
-
 <https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/>
 
-
-
 ---
-
-## Backend
-1. Что такое протокол передачи данных?
-2. Что такое HTTP? Чем отличается HTTPS?
-3. Какие другие протоколы передачи данных, кроме HTTP(S) вы знаете? Как они работают?
-4. Что такое API?
-5. Что такое REST и RESTfull API?
-13) что такое http, как выглядить http запрос
-14) пользователь ввел в поисковой строке яндекс.почта какуй путь делает запрос из браузера пользователя, рассказать максимально подробно насколько сможешь
-15) что такое сессия и для чего нужна
-3) что такое декораторы, какие ты знаешь декораторы встроенные в python
-4) вот есть декоратор @cache, как бы ТЫ реализовал кеширование функций в python
-5) какую модель предстваляет из себя DJANGO
-6) что ты знаешь про generic (CBV)
-7) что такое ORM зачем это нужно и какие недостатки ORM
-8) что такое QuerySet
-9) в чем разница между get и filter
-10) что такое jinja2
-11) queryset запросы: exclude? annotate? alias? values? select_related? prefetch_related? extra? select?  only? 
 

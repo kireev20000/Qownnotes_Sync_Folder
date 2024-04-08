@@ -21,19 +21,19 @@ Username: kireev20000@mail.ru, Password: owncloud1234
 
 ---
 
-WOPI REST API Reference - базавое описание протокола WOIP
- [WOPI REST API Reference | Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/)
-
-In addition to the basics of WOPI as described in WOPI specifications, Collabora Online implements various extensions, in addition to those outlined above primarily associated with CheckFileInfo, to support some features that you may find useful.
-
----
 ### Интерграция
 
 Наиболее важная инфо для интерграции в стороние приложения, [How to integrate — SDK https://sdk.collaboraonline.com/ documentation](https://sdk.collaboraonline.com/docs/How_to_integrate.html)
 
 ---
-
 ### WOPI Протокол
+
+WOPI REST API Reference - базавое описание протокола WOIP
+ [WOPI REST API Reference | Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/)
+
+In addition to the basics of WOPI as described in WOPI specifications, Collabora Online implements various extensions, in addition to those outlined above primarily associated with CheckFileInfo, to support some features that you may find useful.
+
+
   WOPI, or Web Application Open Platform Interface, refers to a sequence of operations that allows users to gain access to a server and change files and data stored within it.
 
 As a REST-based protocol, in order for the process to work HTTP requests need to be sent to a set of defined operations and REST endpoints. Therefore, in order to embed web-based Office document editing in your web Application, WOPI must be developed as a RESTful web API for implementation. You don’t need to implement the whole protocol; you only need to implement the methods of the protocol that are required for your web Application.
@@ -54,7 +54,7 @@ WOPI on the other hand is the recommended backend storage. WOPI is Web Applicati
 
 [Офф план интеграции по примерным шагам - Step-by-step tutorial — SDK https://sdk.collaboraonline.com/ documentation](https://sdk.collaboraonline.com/docs/Step_by_step_tutorial.html)
 
-может и не надо будет, натсройка сервера коде - [Install and Configure Collabora CODE](https://www.linode.com/docs/guides/how-to-install-collabora-code/)
+может и не надо будет, настройка сервера коде - [Install and Configure Collabora CODE](https://www.linode.com/docs/guides/how-to-install-collabora-code/)
 
 ---
 ### Видео с конференций о интеграции
