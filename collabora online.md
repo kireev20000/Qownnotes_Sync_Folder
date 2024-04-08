@@ -48,9 +48,9 @@ WOPI on the other hand is the recommended backend storage. WOPI is Web Applicati
 Грубый набросок плана
 
 1) Ставим в докер или нативно?
-2) настроить WOPI хост
+2) настроить WOPI хост.
 3) Проверить эндпоинты , и в целом разобраться как работает методом научного тыка на простом примере
-4) Искать способы как это интегрировать в ЭПР
+4) Искать способы как это интегрировать в ЭПР.
 
 [Офф план интеграции по примерным шагам - Step-by-step tutorial — SDK https://sdk.collaboraonline.com/ documentation](https://sdk.collaboraonline.com/docs/Step_by_step_tutorial.html)
 
