@@ -65,6 +65,7 @@ WOPI on the other hand is the recommended backend storage. WOPI is Web Applicati
 [SDK: creating a new integration - COOL Days 2021 - YouTube](https://www.youtube.com/watch?v=Gy6MFHYugN4&list=PLeh8MeOzF8jals5oAfZlYmksVaLfY6Wxv&index=3)
 
 [Bringing Collabora Online to your web app Its easy to add rich document collaboration to your web a… - YouTube](https://www.youtube.com/watch?v=H7HfbZBycRU)
+
 [Файл презентации с этого видео, нашел в другом месте](https://archive.fosdem.org/2020/schedule/event/bringing_collabora_online_webapp/attachments/slides/4143/export/events/attachments/bringing_collabora_online_webapp/slides/4143/collaborative.pdf)
 
 [Integrate Collabora Online with web applications - YouTube](https://www.youtube.com/watch?v=xaN10p5inx8)
