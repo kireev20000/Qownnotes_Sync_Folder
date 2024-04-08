@@ -1,33 +1,35 @@
 collabora online
 ================
-Бесплатно только CODE версия, для теста это неважно, но если интегрировать на сайте это не рекомендуют (причин не приводят особо, кроме меньше числа пользователей, правда не ясно, всего пользователей в системе, или пользователей одновременно онлайн).
+Бесплатно только CODE версия, для теста это неважно, но если интегрировать на сайте это не рекомендуют (причин не приводят особо, кроме меньшего числа пользователей, правда не ясно, всего пользователей в системе, или пользователей одновременно онлайн).
 [Subscriptions - Collabora Office and Collabora Online](https://www.collaboraoffice.com/subscriptions/)
 
----
-[collabora-online-sdk-examples/webapp/python at master · CollaboraOnline/collabora-online-sdk-examples · GitHub](https://github.com/CollaboraOnline/collabora-online-sdk-examples/tree/master/webapp/python)
-
-[GitHub - CollaboraOnline/collabora-online-nuxeo-addon](https://github.com/CollaboraOnline/collabora-online-nuxeo-addon)
-
-
-[Installation Guide — SDK https://sdk.collaboraonline.com/ documentation](https://sdk.collaboraonline.com/docs/installation/index.html)
-
-[Docker image hub for CODE](https://hub.docker.com/r/collabora/code/)
-
-[WOPI REST API Reference | Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/)
-
-Наиболее важная инфо для интерграции в стороние приложения, [How to integrate — SDK https://sdk.collaboraonline.com/ documentation](https://sdk.collaboraonline.com/docs/How_to_integrate.html)
-
-
+``Здесь разворачивание на своих серверах доступно бесплатно, но готовые пакеты имеют ограничение по количеству активных пользователей — это решается самостоятельной сборкой из исходников, благо проект с открытым исходным кодом. ``
 
 ---
-
 Демо  [Your Collabora Online Demo](https://demo.eu.collaboraonline.com/owncloud/index.php/login)
-
 Username: kireev20000@mail.ru, Password: owncloud1234
 
+---
+Пример интеграции в Джанго 3.1, очень базово -  [collabora-online-sdk-examples/webapp/python at master · CollaboraOnline/collabora-online-sdk-examples · GitHub](https://github.com/CollaboraOnline/collabora-online-sdk-examples/tree/master/webapp/python)
+
+Аддоны на питоне сомнительной полезности -[GitHub - CollaboraOnline/collabora-online-nuxeo-addon](https://github.com/CollaboraOnline/collabora-online-nuxeo-addon)
 
 
-wopi protocol python
+Гайд по установки хоста, либо нативно, либо в докер[Installation Guide — SDK https://sdk.collaboraonline.com/ documentation](https://sdk.collaboraonline.com/docs/installation/index.html)
+
+Докер образ Collabora Online Development ED - [Docker image hub for CODE](https://hub.docker.com/r/collabora/code/)
+
+---
+
+WOPI REST API Reference - базавое описание протокола WOIP
+ [WOPI REST API Reference | Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/)
+
+In addition to the basics of WOPI as described in WOPI specifications, Collabora Online implements various extensions, in addition to those outlined above primarily associated with CheckFileInfo, to support some features that you may find useful.
+
+---
+### Интерграция
+
+Наиболее важная инфо для интерграции в стороние приложения, [How to integrate — SDK https://sdk.collaboraonline.com/ documentation](https://sdk.collaboraonline.com/docs/How_to_integrate.html)
 
 ---
 
@@ -49,3 +51,23 @@ WOPI on the other hand is the recommended backend storage. WOPI is Web Applicati
 2) настроить WOPI хост
 3) Проверить эндпоинты , и в целом разобраться как работает методом научного тыка на простом примере
 4) Искать способы как это интегрировать в ЭПР
+
+[Офф план интеграции по примерным шагам - Step-by-step tutorial — SDK https://sdk.collaboraonline.com/ documentation](https://sdk.collaboraonline.com/docs/Step_by_step_tutorial.html)
+
+может и не надо будет, натсройка сервера коде - [Install and Configure Collabora CODE](https://www.linode.com/docs/guides/how-to-install-collabora-code/)
+
+---
+### Видео с конференций о интеграции
+
+видео о интеграции с конференции, примерно тоже самое что в доках, скорее просто обзор возможностей -  [Easy to set up – Anywhere. Integrating Collabora Online Into Your Services 🆒 COOL Days 2021 - YouTube](https://www.youtube.com/watch?v=K8Dw7CWZkVc)
+
+[Setting up your own Collabora Online - COOL Days 2021 - YouTube](https://www.youtube.com/watch?v=m-N_wnV-eJw)
+
+[SDK: creating a new integration - COOL Days 2021 - YouTube](https://www.youtube.com/watch?v=Gy6MFHYugN4&list=PLeh8MeOzF8jals5oAfZlYmksVaLfY6Wxv&index=3)
+
+[Bringing Collabora Online to your web app Its easy to add rich document collaboration to your web a… - YouTube](https://www.youtube.com/watch?v=H7HfbZBycRU)
+[Файл презентации с этого видео, нашел в другом месте](https://archive.fosdem.org/2020/schedule/event/bringing_collabora_online_webapp/attachments/slides/4143/export/events/attachments/bringing_collabora_online_webapp/slides/4143/collaborative.pdf)
+
+[Integrate Collabora Online with web applications - YouTube](https://www.youtube.com/watch?v=xaN10p5inx8)
+
+
