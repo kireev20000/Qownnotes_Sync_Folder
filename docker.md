@@ -1,5 +1,35 @@
 # Docker
 
+## Подготовка и запуск проекта production
+### Склонировать репозиторий:
+```
+git clone 
+```
+- Соберите докер-образ из рабочей директории:***
+```shell
+docker build -t flask_test_case .
+```
+
+- Cоздать и заполнить .env файл в директории infra
+```
+FLASK_APP=app
+FLASK_DEBUG=False
+SECRET_KEY_JWT='ваш секретный ключ'
+DATABASE_URL ='postgresql://postgres:postgres@db:5432/maindb'
+COMPOSE_PROJECT_NAME="test_case_rg"
+```
+
+- Запускаем docker-compose из директории infra:
+```shell
+docker compose -f docker-compose.production.yml up
+```
+
+Имя хоста в PGAdmine db, а не локалхост и т.д.
+
+docker compose -f docker-compose.production.yml up 
+
+
+
 ## Что такое контейнеризация? Зачем она нужна?
 Контейнеризация — это технология, которая помогает запускать приложения изолированно от основной операционной системы. Программа упаковывается в специальную оболочку-контейнер, внутри которой — среда, необходимая для работы.
 
