@@ -1,5 +1,10 @@
 # Docker
 
+
+
+выполни команду sudo docker exec -it -u=root имя контейнера /bin/bash (в винде без судо)
+sudo apt install inetutils-ping - установка пинга в контейнер 
+
 ## Подготовка и запуск проекта production
 ### Склонировать репозиторий:
 ```
