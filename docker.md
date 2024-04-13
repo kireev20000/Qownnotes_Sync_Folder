@@ -2,8 +2,19 @@
 
 
 
+копирование файлов из контейнера 
+```
+docker cp <containerId>:/file/path/within/container /host/path/target
+docker cp d537be3137f859effa67dde813d34a5a12a6e6c6190510f6c322bca6bcf5972f://etc/coolwsd/coolwsd.xml b:/coolwsd.xml
+```
+пропись путей для винды 
+```
+    volumes:
+      - "B:/_WorkLab/_other/colla_lab_example/flask_collabora/pyscripts:/opt/collaboraoffice/share/Scripts/python"
+```
 выполни команду sudo docker exec -it -u=root имя контейнера /bin/bash (в винде без судо)
 sudo apt install inetutils-ping - установка пинга в контейнер 
+apt install mc - midnight commander
 
 ## Подготовка и запуск проекта production
 ### Склонировать репозиторий:
