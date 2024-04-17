@@ -1,5 +1,6 @@
 # Docker
 
+docker run -t -d -p 9980:9980 -e "extra_params=--o:ssl.enable=false" collabora/code:22.05.10.2.1
 
 
 копирование файлов из контейнера 
