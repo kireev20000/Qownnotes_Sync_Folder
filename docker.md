@@ -3,7 +3,7 @@
 docker run -t -d -p 9980:9980 -e "extra_params=--o:ssl.enable=false" collabora/code:22.05.10.2.1
 
 
-копирование файлов из контейнера 
+копирование файлов из контейнера.
 ```
 docker cp <containerId>:/file/path/within/container /host/path/target
 docker cp d537be3137f859effa67dde813d34a5a12a6e6c6190510f6c322bca6bcf5972f://etc/coolwsd/coolwsd.xml b:/coolwsd.xml
