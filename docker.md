@@ -17,6 +17,10 @@ docker cp d537be3137f859effa67dde813d34a5a12a6e6c6190510f6c322bca6bcf5972f://etc
 sudo apt install inetutils-ping - установка пинга в контейнер 
 apt install mc - midnight commander
 
+собрать файл
+```
+docker build -t image_name .
+```
 ## Подготовка и запуск проекта production
 ### Склонировать репозиторий:
 ```
