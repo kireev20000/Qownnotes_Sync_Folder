@@ -1,26 +1,5 @@
 # Docker
 
-docker run -t -d -p 9980:9980 -e "extra_params=--o:ssl.enable=false" collabora/code:22.05.10.2.1
-
-
-копирование файлов из контейнера.
-```
-docker cp <containerId>:/file/path/within/container /host/path/target
-docker cp d537be3137f859effa67dde813d34a5a12a6e6c6190510f6c322bca6bcf5972f://etc/coolwsd/coolwsd.xml b:/coolwsd.xml
-```
-пропись путей для винды 0
-```
-    volumes:
-      - "B:/_WorkLab/_other/colla_lab_example/flask_collabora/pyscripts:/opt/collaboraoffice/share/Scripts/python"
-```
-выполни команду sudo docker exec -it -u=root имя контейнера /bin/bash (в винде без судо)
-sudo apt install inetutils-ping - установка пинга в контейнер 
-apt install mc - midnight commander
-
-собрать файл
-```
-docker build -t image_name .
-```
 ## Подготовка и запуск проекта production
 ### Склонировать репозиторий:
 ```
@@ -204,6 +183,44 @@ uses: appleboy/scp-action@master
           
 docker compose -f имя_файла_композа up
 
+------------------------------
 
+docker run -t -d -p 9980:9980 -e "extra_params=--o:ssl.enable=false" collabora/code:22.05.10.2.1
+
+
+копирование файлов из контейнера.
+```
+docker cp <containerId>:/file/path/within/container /host/path/target
+docker cp d537be3137f859effa67dde813d34a5a12a6e6c6190510f6c322bca6bcf5972f://etc/coolwsd/coolwsd.xml b:/coolwsd.xml
+```
+пропись путей для винды 0
+```
+    volumes:
+      - "B:/_WorkLab/_other/colla_lab_example/flask_collabora/pyscripts:/opt/collaboraoffice/share/Scripts/python"
+```
+выполни команду sudo docker exec -it -u=root имя контейнера /bin/bash (в винде без судо)
+sudo apt install inetutils-ping - установка пинга в контейнер 
+apt install mc - midnight commander
+
+собрать файл
+```
+docker build -t image_name .
+```
+войти в терминал докера
+```
+docker exec -it <conteiner_name> bash
+docker container exec -it ubuntu bash
+
+
+```
+docker container run -d -it --name ubuntu -p 80:80  -v B:/_WorkLab/passp_region/backend:/var/www/passpregion/ ubuntu
+
+
+Make the current user own everything inside the folder (and the folder itself):
+```
+sudo chown -R $USER path_folder
+
+
+```
 
 
